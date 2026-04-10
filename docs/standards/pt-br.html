@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Padroes | FinOps Docs</title>
+    <title>Padrões | FinOps-as-Code</title>
     <meta name="description" content="Padrões compartilhados de engenharia para projetos FinOps-as-Code." />
     <link rel="stylesheet" href="../../assets/site.css" />
   </head>
   <body>
     <div class="shell">
       <div class="topbar">
-        <div class="brand">FinOps Docs</div>
+        <div class="brand">
+          <strong>FinOps Docs</strong>
+          <span>Orientação compartilhada para os repositórios da FinOps-as-Code</span>
+        </div>
         <nav class="nav">
           <a href="../../index.pt-BR.html">Home</a>
           <a href="../pt-br.html">Docs</a>
@@ -28,21 +31,21 @@
           diferentes ambientes.
         </p>
         <div class="lang-switch">
-          <a href="./index.html">English Version</a>
+          <a href="./index.html">English version</a>
         </div>
       </header>
 
-      <main class="section card content">
-        <h2>Expectativas Centrais</h2>
+      <main class="content section">
+        <h2>Expectativas centrais</h2>
         <ul>
           <li>Preferir contribuições simples e focadas em vez de abstrações pesadas.</li>
           <li>Favorecer scripts standalone que resolvam um problema claro de FinOps.</li>
           <li>Usar parâmetros e configuração em vez de detalhes hardcoded de ambiente.</li>
           <li>Exigir testes para código submetido.</li>
-          <li>Manter o código legível, sustentável e pronto para uso em contexto aberto.</li>
+          <li>Manter o código legível, sustentável e pronto para reuso em contexto aberto.</li>
         </ul>
 
-        <h2>Expectativas de Segurança</h2>
+        <h2>Expectativas de segurança</h2>
         <ul>
           <li>Adotar comportamento seguro por padrão.</li>
           <li>Usar dry-run quando fizer sentido.</li>
@@ -51,7 +54,7 @@
           <li>Tornar o tratamento de erros compreensível e previsível.</li>
         </ul>
 
-        <h2>Tratamento de Dados Sensíveis</h2>
+        <h2>Tratamento de dados sensíveis</h2>
         <p>Os repositórios não devem incluir:</p>
         <ul>
           <li>IDs de conta</li>
@@ -61,7 +64,7 @@
           <li>informações confidenciais específicas de uma organização</li>
         </ul>
 
-        <h2>Adequação para Uso Aberto</h2>
+        <h2>Adequação para reuso aberto</h2>
         <p>
           As contribuições devem ser escritas para reutilização fora do ambiente original. Isso significa documentar
           premissas, evitar contexto privado e tornar scripts fáceis de inspecionar e adaptar.

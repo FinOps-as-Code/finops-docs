@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Standards | FinOps Docs</title>
+    <title>Standards | FinOps-as-Code</title>
     <meta name="description" content="Shared engineering standards for FinOps-as-Code projects." />
     <link rel="stylesheet" href="../../assets/site.css" />
   </head>
   <body>
     <div class="shell">
       <div class="topbar">
-        <div class="brand">FinOps Docs</div>
+        <div class="brand">
+          <strong>FinOps Docs</strong>
+          <span>Shared guidance for the FinOps-as-Code repositories</span>
+        </div>
         <nav class="nav">
           <a href="../../index.html">Home</a>
           <a href="../index.html">Docs</a>
@@ -28,12 +31,12 @@
           in different environments.
         </p>
         <div class="lang-switch">
-          <a href="./pt-br.html">Portuguese Version</a>
+          <a href="./pt-br.html">Portuguese version</a>
         </div>
       </header>
 
-      <main class="section card content">
-        <h2>Core Expectations</h2>
+      <main class="content section">
+        <h2>Core expectations</h2>
         <ul>
           <li>Prefer simple, focused contributions over heavy abstractions.</li>
           <li>Favor standalone scripts that solve one clear FinOps problem.</li>
@@ -42,7 +45,7 @@
           <li>Keep code readable, maintainable, and ready for reuse in an open context.</li>
         </ul>
 
-        <h2>Safety Expectations</h2>
+        <h2>Safety expectations</h2>
         <ul>
           <li>Default to safe behavior.</li>
           <li>Use dry-run when meaningful.</li>
@@ -51,7 +54,7 @@
           <li>Make error handling understandable and predictable.</li>
         </ul>
 
-        <h2>Sensitive Data Handling</h2>
+        <h2>Sensitive data handling</h2>
         <p>Repositories should not include:</p>
         <ul>
           <li>account IDs</li>
@@ -61,7 +64,7 @@
           <li>organization-specific confidential information</li>
         </ul>
 
-        <h2>Fit for Open Reuse</h2>
+        <h2>Fit for open reuse</h2>
         <p>
           Contributions should be written for reuse outside the original environment. That means documenting
           assumptions, avoiding private context, and making scripts easy for others to inspect and adapt.

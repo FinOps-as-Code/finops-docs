@@ -3,103 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contribuicao | FinOps Docs</title>
-    <meta name="description" content="Guia compartilhado de contribuicao para os repositorios FinOps-as-Code." />
+    <title>Contribuição | FinOps-as-Code</title>
+    <meta name="description" content="Guia compartilhado de contribuição para os repositórios FinOps-as-Code." />
     <link rel="stylesheet" href="../../assets/site.css" />
   </head>
   <body>
     <div class="shell">
       <div class="topbar">
-        <div class="brand">FinOps Docs</div>
+        <div class="brand">
+          <strong>FinOps Docs</strong>
+          <span>Orientação compartilhada para os repositórios da FinOps-as-Code</span>
+        </div>
         <nav class="nav">
           <a href="../../index.pt-BR.html">Home</a>
           <a href="../pt-br.html">Docs</a>
           <a href="../overview/pt-br.html">Visão Geral</a>
-          <a class="current" href="./pt-br.html">Contribuicao</a>
+          <a class="current" href="./pt-br.html">Contribuição</a>
           <a href="../standards/pt-br.html">Padrões</a>
         </nav>
       </div>
 
       <header class="hero">
-        <p class="eyebrow">Contribuicao</p>
+        <p class="eyebrow">Contribuição</p>
         <h1>Contribuir para a FinOps-as-Code</h1>
         <p class="lead">
-          Este guia define o padrão de contribuição esperado para projetos da FinOps-as-Code: automação útil, código
-          legível, testes, segurança por padrão e foco real em custo, eficiência e governança.
+          Este guia define a barra de contribuição esperada nos repositórios da FinOps-as-Code: automação útil, código
+          legível, mudanças testadas, segurança por padrão e conexão real com custo, eficiência e governança.
         </p>
         <div class="lang-switch">
           <a href="./index.html">English HTML</a>
-          <a href="../../CONTRIBUTING.md">English Markdown</a>
-          <a href="../../CONTRIBUTING.pt-BR.md">Portugues Markdown</a>
+          <a href="../../CONTRIBUTING.md">English markdown</a>
+          <a href="../../CONTRIBUTING.pt-BR.md">Português markdown</a>
         </div>
       </header>
 
-      <main class="section card content">
+      <main class="content section">
         <div class="callout">
-          FinOps nao e apenas visibilidade. Tambem e execucao. Contribuicoes devem ajudar equipes a agir sobre
-          oportunidades de custo, eficiencia e governanca de forma pratica.
+          FinOps não é apenas visibilidade. Também é execução. As contribuições devem ajudar equipes a agir sobre
+          oportunidades de custo, eficiência e governança de forma prática.
         </div>
 
-        <h2>Visao do Projeto</h2>
+        <h2>Visão do projeto</h2>
         <p>
-          Hoje a FinOps-as-Code prioriza scripts simples, executaveis e independentes. Esse foco e intencional: esse
-          formato facilita adocao, revisao, reuso e validacao rapida de valor em diferentes ambientes.
+          Hoje a FinOps-as-Code prioriza scripts simples, executáveis e independentes. Esse foco é intencional: esse
+          formato facilita adoção, revisão, reuso e validação rápida de valor em diferentes ambientes.
         </p>
 
-        <h2>Principios de Contribuicao</h2>
+        <h2>Princípios de contribuição</h2>
         <ul>
-          <li>Resolver um problema real de FinOps ligado a custo, eficiencia, governanca ou visibilidade operacional.</li>
-          <li>Preferir implementacoes simples e diretas em vez de abstracoes desnecessarias.</li>
-          <li>Manter contribuicoes compreensiveis, reutilizaveis, sustentaveis e seguras para revisao.</li>
-          <li>Usar configuracao e parametros em vez de valores hardcoded especificos de ambiente.</li>
-          <li>Incluir logs ou saidas claras para facilitar entendimento e operacao.</li>
+          <li>Resolver um problema real de FinOps ligado a custo, eficiência, governança ou visibilidade operacional.</li>
+          <li>Preferir implementações simples e diretas em vez de abstrações desnecessárias.</li>
+          <li>Manter contribuições compreensíveis, reutilizáveis, sustentáveis e seguras para revisão.</li>
+          <li>Usar configuração e parâmetros em vez de valores hardcoded específicos de ambiente.</li>
+          <li>Incluir logs ou saídas claras para facilitar entendimento e operação.</li>
           <li>Escrever para um público amplo, e não apenas para o autor original.</li>
         </ul>
 
-        <h2>Tipos de Contribuicao</h2>
+        <h2>Tipos de contribuição</h2>
         <ul>
-          <li><strong>Scripts:</strong> principal tipo de contribuicao neste momento, sempre ligados a um problema real de FinOps.</li>
-          <li><strong>Documentacao:</strong> para aumentar clareza, adocao, manutencao e onboarding.</li>
-          <li><strong>Correcoes de bugs:</strong> com comportamento esperado e comportamento observado claramente explicados.</li>
+          <li><strong>Scripts:</strong> principal tipo de contribuição neste momento, sempre ligado a um problema real de FinOps.</li>
+          <li><strong>Documentação:</strong> para aumentar clareza, adoção, manutenção e onboarding.</li>
+          <li><strong>Correções de bugs:</strong> com comportamento esperado e comportamento observado claramente explicados.</li>
         </ul>
 
-        <h2>Expectativas de Engenharia</h2>
+        <h2>Expectativas de engenharia</h2>
         <ul>
-          <li>Todo codigo submetido deve ser testado.</li>
-          <li>O codigo deve seguir padroes de engenharia de software, padroes de codigo e boas praticas.</li>
+          <li>Todo código submetido deve ser testado.</li>
+          <li>O código deve seguir padrões de engenharia de software, padrões de código e boas práticas de manutenção.</li>
           <li>Scripts devem adotar defaults seguros e dry-run quando fizer sentido.</li>
-          <li>Contribuicoes nao devem incluir dados sensiveis, segredos, tokens, endpoints privados ou detalhes de conta.</li>
+          <li>Contribuições não devem incluir dados sensíveis, endpoints privados, segredos, tokens ou detalhes de conta.</li>
         </ul>
 
-        <h2>Boas Praticas para Scripts</h2>
+        <h2>Boas práticas para scripts</h2>
         <ul>
           <li>Prefira um script resolvendo um problema claro.</li>
-          <li>Use parametros ou configuracao em vez de valores hardcoded.</li>
-          <li>Evite acoes destrutivas a menos que sejam explicitamente habilitadas.</li>
-          <li>Inclua logging suficiente para entendimento e operacao.</li>
-          <li>Documente pre-requisitos, entradas e comportamento esperado.</li>
+          <li>Use parâmetros ou configuração em vez de valores hardcoded.</li>
+          <li>Evite ações destrutivas a menos que sejam explicitamente habilitadas.</li>
+          <li>Inclua logging suficiente para entendimento e operação.</li>
+          <li>Documente pré-requisitos, entradas e comportamento esperado.</li>
         </ul>
 
-        <h2>Orientacao para Pull Requests</h2>
+        <h2>Orientação para pull requests</h2>
         <p>Todo pull request deve explicar claramente:</p>
         <ul>
-          <li>o que a contribuicao faz</li>
+          <li>o que a contribuição faz</li>
           <li>qual problema de FinOps ela resolve</li>
           <li>como foi testada</li>
-          <li>quais premissas, limitacoes ou cuidados de seguranca existem</li>
+          <li>quais premissas, limitações ou cuidados de segurança existem</li>
           <li>quais documentos precisam ser atualizados junto com ela</li>
         </ul>
 
-        <h2>Responsabilidade e Uso</h2>
+        <h2>Responsabilidade e uso</h2>
         <p>
-          O codigo publicado nos repositorios da FinOps-as-Code e disponibilizado em base <code>as is</code>. Nao existe
-          garantia de suporte, SLA ou manutencao continua. Quem adota e responsavel por validar comportamento,
-          compatibilidade, seguranca e impacto operacional no proprio ambiente.
+          O código publicado nos repositórios da FinOps-as-Code é disponibilizado em base <code>as is</code>. Não
+          existe garantia de suporte, SLA ou manutenção contínua. Quem adota é responsável por validar comportamento,
+          compatibilidade, segurança e impacto operacional no próprio ambiente.
         </p>
 
-        <h2>Governanca e Mantenedores</h2>
+        <h2>Governança e mantenedores</h2>
         <p>
-          As contribuicoes sao revisadas em funcao de aderencia ao projeto, manutencao, seguranca e utilidade para um
+          As contribuições são revisadas em função de aderência ao projeto, manutenção, segurança e utilidade para um
           público mais amplo. Mantenedores e aprovadores atuais incluem:
         </p>
         <ul>
@@ -108,17 +111,10 @@
           <li><a href="https://github.com/elton-peixoto-lu">elton-peixoto-lu</a></li>
         </ul>
 
-        <h2>Contatos de Contribuição</h2>
+        <h2>Contatos de contribuição</h2>
         <p>
-          Para revisao de contribuicoes, aprovacao ou duvidas relacionadas às contribuicoes, contribuidores podem abrir
+          Para revisão de contribuições, aprovação ou dúvidas relacionadas a contribuições, contribuidores podem abrir
           uma issue ou recorrer ao grupo atual de mantenedores acima.
-        </p>
-
-        <h2>Filosofia Final</h2>
-        <p>
-          As melhores contribuicoes sao as que transformam um problema relevante de operacoes financeiras em algo
-          pratico, compreensivel e reutilizavel. Se a sua entrega ajuda equipes a agir melhor sobre prioridades de
-          FinOps, ela provavelmente esta no caminho certo.
         </p>
       </main>
     </div>
