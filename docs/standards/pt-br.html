@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Padroes | FinOps Docs</title>
+    <meta name="description" content="Padrões compartilhados de engenharia para projetos FinOps-as-Code." />
+    <link rel="stylesheet" href="../../assets/site.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <div class="topbar">
+        <div class="brand">FinOps Docs</div>
+        <nav class="nav">
+          <a href="../../index.pt-BR.html">Home</a>
+          <a href="../pt-br.html">Docs</a>
+          <a href="../overview/pt-br.html">Visão Geral</a>
+          <a href="../contributing/pt-br.html">Contribuição</a>
+          <a class="current" href="./pt-br.html">Padrões</a>
+        </nav>
+      </div>
+
+      <header class="hero">
+        <p class="eyebrow">Padrões</p>
+        <h1>Padrões Compartilhados para Automação Prática de FinOps</h1>
+        <p class="lead">
+          Expectativas leves de engenharia para código reutilizável, sustentável, compreensível e seguro para rodar em
+          diferentes ambientes.
+        </p>
+        <div class="lang-switch">
+          <a href="./index.html">English Version</a>
+        </div>
+      </header>
+
+      <main class="section card content">
+        <h2>Expectativas Centrais</h2>
+        <ul>
+          <li>Preferir contribuições simples e focadas em vez de abstrações pesadas.</li>
+          <li>Favorecer scripts standalone que resolvam um problema claro de FinOps.</li>
+          <li>Usar parâmetros e configuração em vez de detalhes hardcoded de ambiente.</li>
+          <li>Exigir testes para código submetido.</li>
+          <li>Manter o código legível, sustentável e pronto para open source.</li>
+        </ul>
+
+        <h2>Expectativas de Segurança</h2>
+        <ul>
+          <li>Adotar comportamento seguro por padrão.</li>
+          <li>Usar dry-run quando fizer sentido.</li>
+          <li>Evitar ações destrutivas a menos que sejam explicitamente habilitadas.</li>
+          <li>Fornecer logs ou saídas claras para consciência operacional.</li>
+          <li>Tornar o tratamento de erros compreensível e previsível.</li>
+        </ul>
+
+        <h2>Tratamento de Dados Sensíveis</h2>
+        <p>Os repositórios não devem incluir:</p>
+        <ul>
+          <li>IDs de conta</li>
+          <li>tokens ou segredos</li>
+          <li>endpoints privados</li>
+          <li>configuração interna restrita</li>
+          <li>informações confidenciais específicas de uma organização</li>
+        </ul>
+
+        <h2>Adequação Open Source</h2>
+        <p>
+          As contribuições devem ser escritas para reutilização fora do ambiente original. Isso significa documentar
+          premissas, evitar contexto privado e tornar scripts fáceis de inspecionar e adaptar.
+        </p>
+      </main>
+    </div>
+  </body>
+</html>
