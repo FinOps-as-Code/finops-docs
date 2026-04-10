@@ -206,6 +206,12 @@ Not every contribution will be merged. Maintainers may request changes, suggest 
 
 The current direction emphasizes practical automation, especially standalone scripts, while remaining open to thoughtful evolution over time.
 
+Current maintainers and approvers:
+
+- [vesteves33](https://github.com/vesteves33)
+- [rendell-arruda](https://github.com/rendell-arruda)
+- [elton-peixoto-lu](https://github.com/elton-peixoto-lu)
+
 ## Code of Conduct
 
 Contributors are expected to participate respectfully and constructively.
@@ -227,6 +233,12 @@ Early discussion is especially helpful when:
 - contributing something that may affect how future work is organized
 
 Thoughtful discussion helps keep contributions aligned and reduces unnecessary rework.
+
+For maintainer review, contribution approval, or support-oriented questions related to this effort, the current points of contact are:
+
+- [vesteves33](https://github.com/vesteves33)
+- [rendell-arruda](https://github.com/rendell-arruda)
+- [elton-peixoto-lu](https://github.com/elton-peixoto-lu)
 
 ## Closing Philosophy
 

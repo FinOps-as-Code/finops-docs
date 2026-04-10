@@ -206,6 +206,12 @@ Nem toda contribuição será aceita. Mantenedores podem solicitar mudanças, su
 
 A direção atual enfatiza automação prática, especialmente scripts standalone, mantendo abertura para evolução cuidadosa ao longo do tempo.
 
+Mantenedores e aprovadores atuais:
+
+- [vesteves33](https://github.com/vesteves33)
+- [rendell-arruda](https://github.com/rendell-arruda)
+- [elton-peixoto-lu](https://github.com/elton-peixoto-lu)
+
 ## Código de Conduta
 
 Espera-se que contribuidores participem de forma respeitosa e construtiva.
@@ -227,6 +233,12 @@ Uma conversa antecipada é especialmente útil quando você:
 - contribui com algo que possa influenciar como o trabalho futuro será organizado
 
 Discussões cuidadosas ajudam a manter as contribuições alinhadas e reduzem retrabalho desnecessário.
+
+Para revisão de mantenedores, aprovação de contribuições ou dúvidas de suporte relacionadas a este esforço, os pontos de contato atuais são:
+
+- [vesteves33](https://github.com/vesteves33)
+- [rendell-arruda](https://github.com/rendell-arruda)
+- [elton-peixoto-lu](https://github.com/elton-peixoto-lu)
 
 ## Filosofia Final
 
