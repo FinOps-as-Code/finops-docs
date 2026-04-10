@@ -44,6 +44,10 @@
           <li>Require testing for submitted code.</li>
           <li>Keep code readable, maintainable, and ready for reuse in an open context.</li>
         </ul>
+        <p>
+          The goal is not to make contribution heavy. The goal is to preserve a minimum engineering bar so other teams
+          can inspect, adapt, and run the automation with confidence.
+        </p>
 
         <h2>Safety expectations</h2>
         <ul>
@@ -53,6 +57,10 @@
           <li>Provide logging or clear output for operator awareness.</li>
           <li>Make error handling understandable and predictable.</li>
         </ul>
+        <p>
+          Wherever possible, scripts should fail in explicit and understandable ways instead of taking irreversible
+          action without enough context for the operator.
+        </p>
 
         <h2>Sensitive data handling</h2>
         <p>Repositories should not include:</p>
@@ -63,12 +71,25 @@
           <li>internal-only configuration</li>
           <li>organization-specific confidential information</li>
         </ul>
+        <p>
+          When examples are needed, use sanitized placeholders and fictional values. The repository should stay
+          publishable and reusable without exposing private details from the original environment.
+        </p>
 
         <h2>Fit for open reuse</h2>
         <p>
           Contributions should be written for reuse outside the original environment. That means documenting
           assumptions, avoiding private context, and making scripts easy for others to inspect and adapt.
         </p>
+
+        <h2>What this means in practice</h2>
+        <ul>
+          <li>use clear names for parameters, flags, and outputs</li>
+          <li>document prerequisites and execution limits</li>
+          <li>avoid hidden dependencies or tight coupling to the author’s environment</li>
+          <li>keep dependencies to the minimum necessary</li>
+          <li>prefer one script solving one clear problem over broad flows that are hard to review</li>
+        </ul>
       </main>
     </div>
   </body>
