@@ -44,6 +44,10 @@
           <li>Exigir testes para código submetido.</li>
           <li>Manter o código legível, sustentável e pronto para reuso em contexto aberto.</li>
         </ul>
+        <p>
+          O objetivo não é burocratizar a contribuição. O objetivo é preservar uma base mínima de qualidade para que
+          outras equipes consigam inspecionar, adaptar e executar a automação com confiança.
+        </p>
 
         <h2>Expectativas de segurança</h2>
         <ul>
@@ -53,6 +57,10 @@
           <li>Fornecer logs ou saídas claras para consciência operacional.</li>
           <li>Tornar o tratamento de erros compreensível e previsível.</li>
         </ul>
+        <p>
+          Sempre que possível, scripts devem falhar de forma explícita e compreensível, em vez de executar ações com
+          impacto irreversível sem contexto suficiente para quem está operando.
+        </p>
 
         <h2>Tratamento de dados sensíveis</h2>
         <p>Os repositórios não devem incluir:</p>
@@ -63,12 +71,25 @@
           <li>configuração interna restrita</li>
           <li>informações confidenciais específicas de uma organização</li>
         </ul>
+        <p>
+          Quando exemplos forem necessários, use placeholders sanitizados e valores fictícios. O repositório deve ser
+          publicável e reutilizável sem expor detalhes privados do ambiente original.
+        </p>
 
         <h2>Adequação para reuso aberto</h2>
         <p>
           As contribuições devem ser escritas para reutilização fora do ambiente original. Isso significa documentar
           premissas, evitar contexto privado e tornar scripts fáceis de inspecionar e adaptar.
         </p>
+
+        <h2>O que isso significa na prática</h2>
+        <ul>
+          <li>usar nomes claros para parâmetros, flags e saídas</li>
+          <li>explicar pré-requisitos e limitações de execução</li>
+          <li>evitar dependências escondidas ou acoplamento excessivo ao ambiente do autor</li>
+          <li>manter dependências no mínimo necessário</li>
+          <li>preferir um script resolvendo um problema claro, em vez de fluxos amplos e difíceis de revisar</li>
+        </ul>
       </main>
     </div>
   </body>
