@@ -234,7 +234,7 @@ Early discussion is especially helpful when:
 
 Thoughtful discussion helps keep contributions aligned and reduces unnecessary rework.
 
-For maintainer review, contribution approval, or support-oriented questions related to this effort, the current points of contact are:
+For maintainer review, contribution approval, or contribution-related questions, the current maintainer contacts are:
 
 - [vesteves33](https://github.com/vesteves33)
 - [rendell-arruda](https://github.com/rendell-arruda)

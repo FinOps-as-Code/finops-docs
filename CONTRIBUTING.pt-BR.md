@@ -234,7 +234,7 @@ Uma conversa antecipada é especialmente útil quando você:
 
 Discussões cuidadosas ajudam a manter as contribuições alinhadas e reduzem retrabalho desnecessário.
 
-Para revisão de mantenedores, aprovação de contribuições ou dúvidas de suporte relacionadas a este esforço, os pontos de contato atuais são:
+Para revisão de mantenedores, aprovação de contribuições ou dúvidas relacionadas às contribuições, os contatos atuais de mantenedores são:
 
 - [vesteves33](https://github.com/vesteves33)
 - [rendell-arruda](https://github.com/rendell-arruda)
