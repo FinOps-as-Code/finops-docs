@@ -2,14 +2,14 @@
 
 Documentation hub for the FinOps-as-Code organization.
 
-This repository provides a lightweight home for shared documentation across practical FinOps automation projects. It is designed to support executable scripts, contribution guidance, governance notes, and future documentation pages without introducing unnecessary complexity.
+This repository is the shared documentation home for practical FinOps automation projects in the organization. It supports executable scripts, contribution guidance, governance notes, and public-facing documentation pages.
 
 ## Purpose
 
 - centralize shared documentation for FinOps-as-Code repositories
 - provide a public documentation landing page through GitHub Pages
 - support contributors with clear, reusable guidance
-- keep room for future growth without forcing a heavy platform model
+- create a clear foundation for shared documentation as the portfolio grows
 
 ## Initial Structure
 
