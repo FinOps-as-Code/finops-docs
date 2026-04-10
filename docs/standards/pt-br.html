@@ -24,18 +24,37 @@
       </div>
 
       <header class="hero">
-        <p class="eyebrow">Padrões</p>
-        <h1>Padrões Compartilhados para Automação Prática de FinOps</h1>
-        <p class="lead">
-          Expectativas leves de engenharia para código reutilizável, sustentável, compreensível e seguro para rodar em
-          diferentes ambientes.
-        </p>
-        <div class="lang-switch">
-          <a href="./index.html">English version</a>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Padrões</p>
+            <h1>Padrões Compartilhados para Automação Prática de FinOps</h1>
+            <p class="lead">
+              Expectativas leves de engenharia para código reutilizável, sustentável, compreensível e seguro para rodar em
+              diferentes ambientes.
+            </p>
+          </div>
+          <aside class="summary-card">
+            <h2>O que esta página enfatiza</h2>
+            <div class="summary-list">
+              <div class="summary-item">
+                <strong>Clareza</strong>
+                <span>As contribuições devem ser fáceis de inspecionar, entender e operar.</span>
+              </div>
+              <div class="summary-item">
+                <strong>Segurança</strong>
+                <span>Defaults seguros, dry-run e comportamento previsível são esperados.</span>
+              </div>
+              <div class="summary-item">
+                <strong>Reuso</strong>
+                <span>O código deve ser portátil para além do ambiente original em que foi escrito.</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </header>
 
-      <main class="content section">
+      <main class="section page-grid">
+        <div class="content page-main">
         <h2>Expectativas centrais</h2>
         <ul>
           <li>Preferir contribuições simples e focadas em vez de abstrações pesadas.</li>
@@ -90,6 +109,24 @@
           <li>manter dependências no mínimo necessário</li>
           <li>preferir um script resolvendo um problema claro, em vez de fluxos amplos e difíceis de revisar</li>
         </ul>
+        </div>
+        <aside class="summary-card page-side">
+          <h2>Checklist</h2>
+          <div class="summary-list">
+            <div class="summary-item">
+              <strong>Dry-run</strong>
+              <span>Inclua sempre que ações destrutivas ou de alto impacto forem possíveis.</span>
+            </div>
+            <div class="summary-item">
+              <strong>Logging</strong>
+              <span>Deixe claro o que o script está fazendo e o que ele decidiu não fazer.</span>
+            </div>
+            <div class="summary-item">
+              <strong>Parâmetros</strong>
+              <span>Prefira flags e configuração explícitas em vez de valores hardcoded.</span>
+            </div>
+          </div>
+        </aside>
       </main>
     </div>
   </body>

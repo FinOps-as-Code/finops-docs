@@ -24,18 +24,37 @@
       </div>
 
       <header class="hero">
-        <p class="eyebrow">Standards</p>
-        <h1>Shared Standards for Practical FinOps Automation</h1>
-        <p class="lead">
-          Lightweight engineering expectations for code that is reusable, maintainable, understandable, and safe to run
-          in different environments.
-        </p>
-        <div class="lang-switch">
-          <a href="./pt-br.html">Portuguese version</a>
+        <div class="hero-grid">
+          <div>
+            <p class="eyebrow">Standards</p>
+            <h1>Shared Standards for Practical FinOps Automation</h1>
+            <p class="lead">
+              Lightweight engineering expectations for code that is reusable, maintainable, understandable, and safe to run
+              in different environments.
+            </p>
+          </div>
+          <aside class="summary-card">
+            <h2>What this page emphasizes</h2>
+            <div class="summary-list">
+              <div class="summary-item">
+                <strong>Clarity</strong>
+                <span>Contributions should be easy to inspect, understand, and operate.</span>
+              </div>
+              <div class="summary-item">
+                <strong>Safety</strong>
+                <span>Safe defaults, dry-run, and predictable behavior are expected.</span>
+              </div>
+              <div class="summary-item">
+                <strong>Reuse</strong>
+                <span>Code should be portable beyond the original environment where it was written.</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </header>
 
-      <main class="content section">
+      <main class="section page-grid">
+        <div class="content page-main">
         <h2>Core expectations</h2>
         <ul>
           <li>Prefer simple, focused contributions over heavy abstractions.</li>
@@ -90,6 +109,24 @@
           <li>keep dependencies to the minimum necessary</li>
           <li>prefer one script solving one clear problem over broad flows that are hard to review</li>
         </ul>
+        </div>
+        <aside class="summary-card page-side">
+          <h2>Checklist</h2>
+          <div class="summary-list">
+            <div class="summary-item">
+              <strong>Dry-run</strong>
+              <span>Include it whenever destructive or high-impact actions are possible.</span>
+            </div>
+            <div class="summary-item">
+              <strong>Logging</strong>
+              <span>Make it clear what the script is doing and what it decided not to do.</span>
+            </div>
+            <div class="summary-item">
+              <strong>Parameters</strong>
+              <span>Prefer explicit flags and configuration over hardcoded values.</span>
+            </div>
+          </div>
+        </aside>
       </main>
     </div>
   </body>

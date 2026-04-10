@@ -210,8 +210,7 @@ code {
   font-size: 1rem;
 }
 
-.actions,
-.lang-switch {
+.actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -219,10 +218,6 @@ code {
 
 .actions {
   margin-top: 1.35rem;
-}
-
-.lang-switch {
-  margin-top: 1rem;
 }
 
 .button {
@@ -325,6 +320,21 @@ code {
   color: var(--accent);
   font-size: 1rem;
   line-height: 1.2;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.page-main {
+  min-width: 0;
+}
+
+.page-side {
+  min-width: 0;
 }
 
 .section {
@@ -451,6 +461,7 @@ code {
 
 @media (max-width: 1080px) {
   .hero-grid,
+  .page-grid,
   .split-grid,
   .repo-grid,
   .cta-layout,
@@ -498,8 +509,7 @@ code {
     font-size: 2.45rem;
   }
 
-  .actions,
-  .lang-switch {
+  .actions {
     flex-direction: column;
     align-items: stretch;
   }
