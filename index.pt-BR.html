@@ -279,8 +279,8 @@
 
     .stat {
       display: grid;
-      grid-template-columns: 5rem minmax(0, 1fr);
-      gap: 0.8rem;
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
       align-items: start;
       padding: 0.9rem 0;
       border-top: 1px solid var(--border);
@@ -292,14 +292,17 @@
     }
 
     .stat strong {
+      display: block;
       font-family: var(--sans);
-      font-size: 1.1rem;
+      font-size: 1rem;
+      line-height: 1.2;
       color: var(--accent);
     }
 
     .stat span {
       color: var(--text-dim);
       font-size: 0.88rem;
+      line-height: 1.65;
     }
 
     section {
