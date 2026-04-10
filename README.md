@@ -9,7 +9,7 @@ This repository is the shared documentation home for practical FinOps automation
 - centralize shared documentation for FinOps-as-Code repositories
 - provide a public documentation landing page through GitHub Pages
 - support contributors with clear, reusable guidance
-- create a clear foundation for shared documentation as the portfolio grows
+- create a clear foundation for shared documentation as the organization grows
 
 ## Initial Structure
 
