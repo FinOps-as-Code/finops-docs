@@ -15,8 +15,15 @@ This repository provides a lightweight home for shared documentation across prac
 
 - `index.html`: public landing page for GitHub Pages
 - `assets/`: shared static assets for the landing page
-- `docs/`: documentation content and reusable guides
+- `docs/`: documentation pages and reusable guides
+- `CONTRIBUTING.md`: contribution guidance in English
+- `CONTRIBUTING.pt-BR.md`: contribution guidance in Portuguese
 
 ## Publishing
 
 This repository is intended to publish documentation using GitHub Pages from the `main` branch.
+
+## Repository Links
+
+- Public docs site: `https://finops-as-code.github.io/finops-docs/`
+- Repository: `https://github.com/FinOps-as-Code/finops-docs`
