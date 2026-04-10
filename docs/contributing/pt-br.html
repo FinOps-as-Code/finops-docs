@@ -22,10 +22,10 @@
 
       <header class="hero">
         <p class="eyebrow">Contribuicao</p>
-        <h1>Guia Compartilhado de Contribuicao</h1>
+        <h1>Contribuir para a FinOps-as-Code</h1>
         <p class="lead">
-          Um modelo comum de contribuicao para os repositorios FinOps-as-Code, centrado em automacao pratica, defaults
-          seguros, testes e engenharia open source reutilizavel.
+          Este guia define o padrão de contribuição esperado para projetos da FinOps-as-Code: automação útil, código
+          legível, testes, segurança por padrão e foco real em custo, eficiência e governança.
         </p>
         <div class="lang-switch">
           <a href="./index.html">English HTML</a>
@@ -42,8 +42,8 @@
 
         <h2>Visao do Projeto</h2>
         <p>
-          Hoje a FinOps-as-Code prioriza scripts simples, executaveis e independentes. Esse foco mantem a organizacao
-          pratica e reutilizavel, sem impedir evolucao cuidadosa no futuro.
+          Hoje a FinOps-as-Code prioriza scripts simples, executaveis e independentes. Esse foco e intencional: esse
+          formato facilita adocao, revisao, reuso e validacao rapida de valor em diferentes ambientes.
         </p>
 
         <h2>Principios de Contribuicao</h2>
@@ -56,11 +56,11 @@
           <li>Escrever para um publico open source, nao apenas para o autor original.</li>
         </ul>
 
-        <h2>O Que Priorizamos</h2>
+        <h2>Tipos de Contribuicao</h2>
         <ul>
-          <li>Scripts standalone como principal tipo de contribuicao neste momento.</li>
-          <li>Documentacao que aumente clareza, adocao e manutencao.</li>
-          <li>Correcoes de bugs com comportamento esperado e comportamento observado claramente explicados.</li>
+          <li><strong>Scripts:</strong> principal tipo de contribuicao neste momento, sempre ligados a um problema real de FinOps.</li>
+          <li><strong>Documentacao:</strong> para aumentar clareza, adocao, manutencao e onboarding.</li>
+          <li><strong>Correcoes de bugs:</strong> com comportamento esperado e comportamento observado claramente explicados.</li>
         </ul>
 
         <h2>Expectativas de Engenharia</h2>
@@ -69,6 +69,15 @@
           <li>O codigo deve seguir padroes de engenharia de software, padroes de codigo e boas praticas.</li>
           <li>Scripts devem adotar defaults seguros e dry-run quando fizer sentido.</li>
           <li>Contribuicoes nao devem incluir dados sensiveis, segredos, tokens, endpoints privados ou detalhes de conta.</li>
+        </ul>
+
+        <h2>Boas Praticas para Scripts</h2>
+        <ul>
+          <li>Prefira um script resolvendo um problema claro.</li>
+          <li>Use parametros ou configuracao em vez de valores hardcoded.</li>
+          <li>Evite acoes destrutivas a menos que sejam explicitamente habilitadas.</li>
+          <li>Inclua logging suficiente para entendimento e operacao.</li>
+          <li>Documente pre-requisitos, entradas e comportamento esperado.</li>
         </ul>
 
         <h2>Orientacao para Pull Requests</h2>
@@ -81,16 +90,18 @@
           <li>quais documentos precisam ser atualizados junto com ela</li>
         </ul>
 
-        <h2>Suporte e Responsabilidade</h2>
+        <h2>Suporte Open Source e Responsabilidade</h2>
         <p>
-          O codigo dos repositorios FinOps-as-Code e fornecido em base <code>as is</code>. Mantenedores e contribuidores
-          nao garantem suporte, SLA ou manutencao continua. Quem adota e responsavel por validar o comportamento no
-          proprio ambiente.
+          O codigo publicado nos repositorios da FinOps-as-Code e disponibilizado em base <code>as is</code>. Nao existe
+          garantia de suporte, SLA ou manutencao continua. Quem adota e responsavel por validar comportamento,
+          compatibilidade, seguranca e impacto operacional no proprio ambiente.
         </p>
 
-        <p class="meta">
-          Para o guia completo de contribuicao, com principios detalhados e filosofia do projeto, use os arquivos
-          Markdown linkados no topo desta pagina.
+        <h2>Filosofia Final</h2>
+        <p>
+          As melhores contribuicoes sao as que transformam um problema relevante de operacoes financeiras em algo
+          pratico, compreensivel e reutilizavel. Se a sua entrega ajuda equipes a agir melhor sobre prioridades de
+          FinOps, ela provavelmente esta no caminho certo.
         </p>
       </main>
     </div>

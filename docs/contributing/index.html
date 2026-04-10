@@ -22,10 +22,10 @@
 
       <header class="hero">
         <p class="eyebrow">Contributing</p>
-        <h1>Shared Contribution Guidance</h1>
+        <h1>Contributing to FinOps-as-Code</h1>
         <p class="lead">
-          A common contribution model for FinOps-as-Code repositories, centered on practical automation, safe defaults,
-          testing, and reusable open source engineering.
+          This guide sets the contribution standard expected across FinOps-as-Code projects: useful automation, readable
+          code, testing, safe defaults, and a real connection to cost, efficiency, and governance outcomes.
         </p>
         <div class="lang-switch">
           <a href="../../CONTRIBUTING.md">English Markdown</a>
@@ -42,8 +42,8 @@
 
         <h2>Project Vision</h2>
         <p>
-          FinOps-as-Code currently prioritizes simple, executable, and independent scripts. This focus keeps the
-          organization practical and reusable while leaving room for thoughtful evolution over time.
+          FinOps-as-Code currently prioritizes simple, executable, and independent scripts. That focus is intentional:
+          this format makes adoption, review, reuse, and validation of value much easier across different environments.
         </p>
 
         <h2>Contribution Principles</h2>
@@ -56,11 +56,11 @@
           <li>Write for an open source audience, not only for the original author or team.</li>
         </ul>
 
-        <h2>What We Prioritize</h2>
+        <h2>Types of Contributions</h2>
         <ul>
-          <li>Standalone scripts as the current main contribution type.</li>
-          <li>Documentation that improves adoption, clarity, and maintainability.</li>
-          <li>Bug fixes that clearly explain expected versus actual behavior.</li>
+          <li><strong>Scripts:</strong> the main contribution type today, always tied to a real FinOps problem.</li>
+          <li><strong>Documentation:</strong> to improve clarity, adoption, maintainability, and onboarding.</li>
+          <li><strong>Bug fixes:</strong> with clear explanation of expected versus actual behavior.</li>
         </ul>
 
         <h2>Engineering Expectations</h2>
@@ -69,6 +69,15 @@
           <li>Code must follow software engineering standards, coding standards, and good maintenance practices.</li>
           <li>Scripts should support safe defaults and dry-run behavior when meaningful.</li>
           <li>Contributions must avoid sensitive data, private endpoints, secrets, tokens, and account-specific details.</li>
+        </ul>
+
+        <h2>Best Practices for Scripts</h2>
+        <ul>
+          <li>Prefer one script solving one clear problem.</li>
+          <li>Use parameters or configuration instead of hardcoded values.</li>
+          <li>Avoid destructive actions unless they are explicitly enabled.</li>
+          <li>Include enough logging for understanding and operation.</li>
+          <li>Document prerequisites, inputs, and expected behavior.</li>
         </ul>
 
         <h2>Pull Request Guidance</h2>
@@ -81,16 +90,18 @@
           <li>what documentation needs to be updated alongside it</li>
         </ul>
 
-        <h2>Support and Responsibility</h2>
+        <h2>Open Source Support and Responsibility</h2>
         <p>
           Code in FinOps-as-Code repositories is provided on an <code>as is</code> basis. Maintainers and contributors
-          do not guarantee support, SLA, or ongoing maintenance. Adopters are responsible for validating the behavior
-          in their own environments.
+          do not guarantee support, SLA, or ongoing maintenance. Adopters are responsible for validating behavior,
+          compatibility, safety, and operational impact in their own environments.
         </p>
 
-        <p class="meta">
-          For the complete contributor guide, including detailed principles and philosophy, use the Markdown documents
-          linked at the top of this page.
+        <h2>Closing Philosophy</h2>
+        <p>
+          The strongest contributions are the ones that turn an important financial operations problem into something
+          practical, understandable, and reusable. If the work helps teams act better on FinOps priorities, it is
+          probably moving in the right direction.
         </p>
       </main>
     </div>
