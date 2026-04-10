@@ -270,7 +270,8 @@ code {
 
 .narrative-grid,
 .repo-grid,
-.closing-band {
+.closing-band,
+.grid.cards {
   display: grid;
   gap: 1rem;
 }
@@ -407,6 +408,9 @@ code {
   border-radius: var(--radius);
   padding: 1.15rem;
   background: var(--surface);
+  display: grid;
+  gap: 0.65rem;
+  align-content: start;
 }
 
 .card p {
@@ -414,8 +418,12 @@ code {
 }
 
 .card h3 {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
   font-size: 1.25rem;
+}
+
+.grid.cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .card.accent,
@@ -449,7 +457,8 @@ code {
   .hero-grid,
   .narrative-grid,
   .repo-grid,
-  .closing-band {
+  .closing-band,
+  .grid.cards {
     grid-template-columns: 1fr;
   }
 
