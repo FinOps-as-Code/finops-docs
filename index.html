@@ -8,6 +8,7 @@
       name="description"
       content="Shared documentation hub for FinOps-as-Code repositories focused on practical FinOps automation."
     />
+    <script src="./assets/theme.js" defer></script>
     <link rel="stylesheet" href="./assets/site.css" />
   </head>
   <body>
@@ -17,14 +18,17 @@
           <strong>FinOps-as-Code</strong>
           <span>Documentation and practical automation for open FinOps initiatives</span>
         </div>
-        <nav class="nav">
-          <a class="current" href="./index.html">Home</a>
-          <a href="./docs/index.html">Docs</a>
-          <a href="./docs/overview/index.html">Overview</a>
-          <a href="./docs/contributing/index.html">Contributing</a>
-          <a href="./docs/standards/index.html">Standards</a>
-          <a href="https://github.com/FinOps-as-Code">GitHub</a>
-        </nav>
+        <div class="topbar-actions">
+          <nav class="nav">
+            <a class="current" href="./index.html">Home</a>
+            <a href="./docs/index.html">Docs</a>
+            <a href="./docs/overview/index.html">Overview</a>
+            <a href="./docs/contributing/index.html">Contributing</a>
+            <a href="./docs/standards/index.html">Standards</a>
+            <a href="https://github.com/FinOps-as-Code">GitHub</a>
+          </nav>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle color theme">Dark mode</button>
+        </div>
       </div>
 
       <header class="hero">
