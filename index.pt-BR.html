@@ -1,168 +1,786 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FinOps as Code Docs</title>
-    <meta
-      name="description"
-      content="Portal compartilhado de documentação dos repositórios FinOps-as-Code com foco em automação prática de FinOps."
-    />
-    <link rel="stylesheet" href="./assets/site.css" />
-  </head>
-  <body>
-    <div class="shell">
-      <div class="topbar">
-        <div class="brand">FinOps-as-Code</div>
-        <nav class="nav">
-          <a class="current" href="./index.pt-BR.html">Home</a>
-          <a href="./docs/pt-br.html">Docs</a>
-          <a href="./docs/contributing/pt-br.html">Contribuição</a>
-          <a href="./docs/standards/pt-br.html">Padrões</a>
-          <a href="https://github.com/FinOps-as-Code">GitHub</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinOps-as-Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f8fb;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: #ffffff;
+      --border: #d8e4ef;
+      --border-strong: #bdd0e0;
+      --accent: #1c7ed6;
+      --accent-soft: #e9f3ff;
+      --accent-2: #0f9d7a;
+      --text: #13212f;
+      --text-dim: #556779;
+      --text-soft: #78899b;
+      --mono: "IBM Plex Mono", monospace;
+      --sans: "Manrope", sans-serif;
+      --body: "IBM Plex Sans", sans-serif;
+      --shadow: 0 18px 48px rgba(13, 35, 58, 0.08);
+      --radius: 18px;
+      --max: 1160px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--body);
+      background:
+        radial-gradient(circle at top left, rgba(28, 126, 214, 0.08), transparent 32%),
+        radial-gradient(circle at top right, rgba(15, 157, 122, 0.06), transparent 28%),
+        linear-gradient(180deg, #f7fbff 0%, #f3f7fb 100%);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 2.4rem));
+      margin: 0 auto;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(245, 248, 251, 0.84);
+      border-bottom: 1px solid rgba(189, 208, 224, 0.65);
+    }
+
+    .nav-inner {
+      width: min(var(--max), calc(100% - 2.4rem));
+      margin: 0 auto;
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.12rem;
+    }
+
+    .nav-brand strong {
+      font-family: var(--sans);
+      font-size: 1.02rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+    }
+
+    .nav-brand span {
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .nav-chip {
+      white-space: nowrap;
+      padding: 0.42rem 0.78rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--text-soft);
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 5.5rem 0 4rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(28, 126, 214, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(28, 126, 214, 0.06) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.4rem;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-2);
+    }
+
+    .hero h1 {
+      font-family: var(--sans);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.4rem;
+      color: var(--text);
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-copy {
+      font-size: 1rem;
+      color: var(--text-dim);
+      max-width: 62ch;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.85rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #4ea4f0);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(28, 126, 214, 0.18);
+    }
+
+    .btn-primary:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border-strong);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-secondary:hover {
+      text-decoration: none;
+      border-color: var(--accent);
+    }
+
+    .hero-meta {
+      color: var(--text-soft);
+      font-size: 0.84rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+      border: 1px solid rgba(189, 208, 224, 0.8);
+      border-radius: 28px;
+      padding: 1.6rem;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      margin-bottom: 0.8rem;
+      color: var(--text);
+    }
+
+    .hero-card p {
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .stat-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .stat {
+      display: grid;
+      grid-template-columns: 78px 1fr;
+      gap: 0.8rem;
+      align-items: start;
+      padding: 0.9rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .stat:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .stat strong {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    .stat span {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-head {
+      display: grid;
+      gap: 0.8rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .section-title {
+      font-family: var(--sans);
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      max-width: 14ch;
+    }
+
+    .section-body {
+      max-width: 68ch;
+      color: var(--text-dim);
+      font-size: 0.96rem;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .principle {
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+      box-shadow: 0 6px 18px rgba(13, 35, 58, 0.04);
+    }
+
+    .principle strong {
+      display: block;
+      font-family: var(--sans);
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+
+    .principle p {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 1.6rem;
+      box-shadow: 0 10px 28px rgba(13, 35, 58, 0.05);
+    }
+
+    .panel h3 {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .panel p {
+      color: var(--text-dim);
+      font-size: 0.92rem;
+      margin-bottom: 1rem;
+    }
+
+    .list {
+      display: grid;
+      gap: 0.75rem;
+      list-style: none;
+    }
+
+    .list li {
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: rgba(245, 248, 251, 0.9);
+      color: var(--text-dim);
+      font-size: 0.88rem;
+    }
+
+    .list li strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.18rem;
+    }
+
+    .path-grid,
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 24px rgba(13, 35, 58, 0.05);
+    }
+
+    .card .eyetag {
+      display: inline-block;
+      margin-bottom: 0.85rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      background: #eef6ff;
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .card p {
+      color: var(--text-dim);
+      font-size: 0.88rem;
+      margin-bottom: 1rem;
+    }
+
+    .card a {
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .community {
+      background: linear-gradient(180deg, rgba(233, 243, 255, 0.55), rgba(255, 255, 255, 0.6));
+      border-top: 1px solid rgba(189, 208, 224, 0.55);
+      border-bottom: 1px solid rgba(189, 208, 224, 0.55);
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.72));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 2.4rem;
+      box-shadow: var(--shadow);
+    }
+
+    .cta .section-title {
+      max-width: none;
+      margin: 0 auto 0.9rem;
+    }
+
+    .cta .section-body {
+      margin: 0 auto 1.8rem;
+    }
+
+    footer {
+      padding: 2.2rem 0 3rem;
+      color: var(--text-soft);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .principles,
+      .path-grid,
+      .repo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-inner {
+        min-height: auto;
+        padding: 0.9rem 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 0.85rem 1rem;
+      }
+
+      .hero {
+        padding-top: 4.2rem;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand">
+        <strong>FinOps-as-Code</strong>
+        <span>Prática aberta para automação, aprendizado e colaboração em FinOps</span>
       </div>
 
-      <header class="hero">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Esforço Open Source Oficial</p>
-            <h1>FinOps que sai do insight e vira ação.</h1>
-            <p class="lead">
-              A FinOps-as-Code é um esforço open source alinhado ao ecossistema da FinOps Foundation. O foco está em
-              automações práticas que ajudam equipes a agir sobre custo, eficiência e governança por meio de scripts e
-              workflows executáveis.
-            </p>
-            <div class="actions">
-              <a class="button primary" href="./docs/pt-br.html">Ler a Documentação</a>
-              <a class="button secondary" href="https://github.com/FinOps-as-Code">Explorar a Organização</a>
-            </div>
-            <div class="lang-switch">
-              <a href="./index.html">English Version</a>
-            </div>
-            <div class="hero-kicker">
-              <strong>Foco atual:</strong> automação segura e reutilizável para custos, eficiência e governança
-            </div>
-          </div>
+      <ul class="nav-links">
+        <li><a href="https://finops-as-code.github.io/finops-docs/docs/pt-br.html" target="_blank" rel="noreferrer">Documentação</a></li>
+        <li><a href="https://finops-as-code.github.io/finops-docs/docs/contributing/pt-br.html" target="_blank" rel="noreferrer">Contribuição</a></li>
+        <li><a href="https://finops-as-code.github.io/finops-docs/docs/standards/pt-br.html" target="_blank" rel="noreferrer">Padrões</a></li>
+        <li><a href="https://github.com/FinOps-as-Code" target="_blank" rel="noreferrer">GitHub</a></li>
+      </ul>
 
-          <aside class="hero-panel">
-            <p class="eyebrow">Manifesto</p>
-            <h2>Visibilidade importa. Execução muda resultado.</h2>
-            <p>
-              O trabalho aqui é feito para equipes que já sabem onde existe desperdício e agora precisam de código que
-              consigam inspecionar, testar e rodar para agir de verdade.
-            </p>
-            <ul class="panel-list">
-              <li>Scripts primeiro</li>
-              <li>Defaults seguros</li>
-              <li>Casos reais de FinOps</li>
-              <li>Barra de qualidade open source</li>
-            </ul>
-          </aside>
-        </div>
-      </header>
-
-      <main>
-        <section class="section narrative-band">
-          <div class="section-heading">
-            <p class="eyebrow">Por que isso existe</p>
-            <h2>Uma base prática para automação FinOps reutilizável.</h2>
-          </div>
-          <div class="narrative-grid">
-            <div class="narrative-copy">
-              <p>
-                Os repositórios atuais focam em problemas operacionais concretos: recursos ociosos, desperdício evitável
-                em nuvem e a distância entre visibilidade de custo e execução de fato.
-              </p>
-              <p>
-                A documentação existe para tornar esse trabalho mais fácil de adotar e mais fácil de expandir. Ela
-                explica como contribuir, quais padrões de engenharia importam e que tipo de automação tem bom encaixe aqui.
-              </p>
-            </div>
-            <div class="narrative-callout">
-              <span>Leia a iniciativa, depois contribua com código que outras equipes realmente consigam usar.</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="section entry-section">
-          <div class="section-heading">
-            <p class="eyebrow">Comece Aqui</p>
-            <h2>Três caminhos para entrar no projeto.</h2>
-          </div>
-          <div class="entry-list">
-            <article class="entry-item">
-              <div class="entry-index">01</div>
-              <div class="entry-body">
-                <h3>Leia a visão geral</h3>
-                <p>Entenda o que a FinOps-as-Code publica hoje, quais problemas ela ataca e como o esforço pode evoluir.</p>
-                <a href="./docs/overview/pt-br.html">Abrir visão geral</a>
-              </div>
-            </article>
-            <article class="entry-item">
-              <div class="entry-index">02</div>
-              <div class="entry-body">
-                <h3>Revise o guia de contribuição</h3>
-                <p>Veja o padrão esperado para scripts, documentação, pull requests, testes, segurança e manutenção.</p>
-                <a href="./docs/contributing/pt-br.html">Abrir guia de contribuição</a>
-              </div>
-            </article>
-            <article class="entry-item">
-              <div class="entry-index">03</div>
-              <div class="entry-body">
-                <h3>Confira os padrões de engenharia</h3>
-                <p>Use a seção de padrões para entender dry-run, logging, defaults seguros e implementação reutilizável.</p>
-                <a href="./docs/standards/pt-br.html">Abrir padrões</a>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section repo-showcase">
-          <div class="section-heading">
-            <p class="eyebrow">Repositórios</p>
-            <h2>Repositórios atuais.</h2>
-          </div>
-          <div class="repo-grid">
-            <article class="repo-feature">
-              <div class="repo-tag">AWS Cost Cleanup</div>
-              <h3>cleanup_block_storage_idle</h3>
-              <p>Automação para identificar volumes de block storage sem uso e ajudar equipes a remover desperdício com segurança.</p>
-              <a href="https://github.com/FinOps-as-Code/cleanup_block_storage_idle">Abrir repositório</a>
-            </article>
-            <div class="repo-stack">
-              <article class="repo-mini">
-                <div class="repo-tag">IP Efficiency</div>
-                <h3>cleanup_ip_idle</h3>
-                <p>Automação para recuperar recursos de IP que continuam gerando custo evitável.</p>
-                <a href="https://github.com/FinOps-as-Code/cleanup_ip_idle">Abrir repositório</a>
-              </article>
-              <article class="repo-mini">
-                <div class="repo-tag">Public Presence</div>
-                <h3>linktree-f2-brazil</h3>
-                <p>Projeto público de apoio conectado à camada de visibilidade da organização.</p>
-                <a href="https://github.com/FinOps-as-Code/linktree-f2-brazil">Abrir repositório</a>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section class="section closing-band">
-          <div class="closing-copy">
-            <p class="eyebrow">Direção Open Source</p>
-            <h2>Os repositórios atuais são exemplo, não limite.</h2>
-            <p>
-              Novos repositórios podem ser criados sempre que um problema real de FinOps merecer sua própria automação.
-              O que deve permanecer constante é a barra de contribuição: caso prático, execução segura, código legível
-              e valor reutilizável para outras equipes.
-            </p>
-          </div>
-          <div class="closing-actions">
-            <a class="button primary" href="./docs/contributing/pt-br.html">Contribuir com o Esforço</a>
-            <a class="button secondary" href="./docs/overview/pt-br.html">Ler a Visão do Projeto</a>
-          </div>
-        </section>
-      </main>
+      <span class="nav-chip">Esforço open source</span>
     </div>
-  </body>
+  </nav>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Comunidade, prática e execução responsável</div>
+        <h1>FinOps-as-Code para transformar <em>visibilidade</em> em colaboração e ação.</h1>
+        <p class="hero-copy">
+          Um esforço open source para apoiar equipes na adoção de práticas de FinOps com automações reutilizáveis,
+          documentação clara e padrões de engenharia que conectam tecnologia, finanças e objetivos de negócio.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="https://finops-as-code.github.io/finops-docs/docs/pt-br.html" target="_blank" rel="noreferrer">Explorar documentação</a>
+          <a class="btn-secondary" href="https://github.com/FinOps-as-Code" target="_blank" rel="noreferrer">Conhecer os repositórios</a>
+        </div>
+
+        <p class="hero-meta">
+          Para pessoas praticantes de FinOps, engenharia, operações, finanças e governança que querem construir soluções úteis, abertas e seguras.
+        </p>
+      </div>
+
+      <aside class="hero-card">
+        <h3>O que você encontra aqui</h3>
+        <p>
+          Repositórios práticos, documentação de adoção e padrões de implementação para que automação FinOps seja mais fácil de entender, reutilizar e evoluir em comunidade.
+        </p>
+
+        <div class="stat-list">
+          <div class="stat">
+            <strong>Prática</strong>
+            <span>Automação orientada a casos de uso reais, com valor operacional claro.</span>
+          </div>
+          <div class="stat">
+            <strong>Clareza</strong>
+            <span>Documentação e padrões para facilitar adoção, revisão e expansão.</span>
+          </div>
+          <div class="stat">
+            <strong>Colaboração</strong>
+            <span>Contribuições que aproximam engenharia, finanças e negócio.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="section-label">Princípios</div>
+        <h2 class="section-title">Uma base aberta para aprender, aplicar e compartilhar FinOps.</h2>
+        <p class="section-body">
+          A proposta do projeto é simples: publicar automações e materiais que ajudem equipes a agir com mais consistência sobre custo, eficiência e governança, sem abrir mão de qualidade técnica e legibilidade.
+        </p>
+      </div>
+
+      <div class="principles">
+        <div class="principle">
+          <strong>Casos de uso reais</strong>
+          <p>Automação nasce de necessidades práticas e problemas recorrentes de operação.</p>
+        </div>
+        <div class="principle">
+          <strong>Padrões reutilizáveis</strong>
+          <p>Scripts e fluxos devem ser inspecionáveis, testáveis e adaptáveis a diferentes contextos.</p>
+        </div>
+        <div class="principle">
+          <strong>Execução responsável</strong>
+          <p>Defaults seguros, dry-run e revisão são parte da entrega, não detalhe opcional.</p>
+        </div>
+        <div class="principle">
+          <strong>Contribuição aberta</strong>
+          <p>Código, documentação, revisão e novos casos de uso fazem parte do mesmo esforço.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="community">
+    <div class="container split reveal">
+      <div class="panel">
+        <h3>Por que isso existe</h3>
+        <p>
+          Muitas equipes já têm visibilidade sobre desperdício e oportunidades de otimização, mas ainda enfrentam dificuldade para transformar esse conhecimento em execução repetível, segura e compartilhável.
+        </p>
+        <p>
+          FinOps-as-Code existe para encurtar essa distância com artefatos práticos que possam ser lidos, testados, executados e melhorados por uma comunidade.
+        </p>
+      </div>
+
+      <div class="panel">
+        <h3>Para quem o projeto serve</h3>
+        <ul class="list">
+          <li>
+            <strong>Pessoas de engenharia e plataforma</strong>
+            que querem automatizar ações com mais segurança e consistência.
+          </li>
+          <li>
+            <strong>Pessoas praticantes de FinOps</strong>
+            que precisam de material aplicável e adaptável ao contexto real.
+          </li>
+          <li>
+            <strong>Pessoas de finanças, operações e governança</strong>
+            que buscam mais clareza sobre como automação pode apoiar controle e decisão.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="section-label">Comece aqui</div>
+        <h2 class="section-title">Três formas de entrar no esforço.</h2>
+        <p class="section-body">
+          Você pode começar entendendo a visão do projeto, revisando como contribuir ou explorando os padrões que orientam a implementação das automações.
+        </p>
+      </div>
+
+      <div class="path-grid">
+        <article class="card">
+          <span class="eyetag">Visão geral</span>
+          <h3>Entenda a proposta</h3>
+          <p>Conheça o escopo atual do esforço, a direção do projeto e como os repositórios se conectam.</p>
+          <a href="https://finops-as-code.github.io/finops-docs/docs/overview/pt-br.html" target="_blank" rel="noreferrer">Abrir visão geral</a>
+        </article>
+
+        <article class="card">
+          <span class="eyetag">Contribuição</span>
+          <h3>Veja como participar</h3>
+          <p>Entenda o padrão esperado para código, documentação, revisões, testes e colaboração aberta.</p>
+          <a href="https://finops-as-code.github.io/finops-docs/docs/contributing/pt-br.html" target="_blank" rel="noreferrer">Abrir guia de contribuição</a>
+        </article>
+
+        <article class="card">
+          <span class="eyetag">Padrões</span>
+          <h3>Revise a barra técnica</h3>
+          <p>Consulte práticas de implementação como dry-run, defaults seguros, logging e reutilização.</p>
+          <a href="https://finops-as-code.github.io/finops-docs/docs/standards/pt-br.html" target="_blank" rel="noreferrer">Abrir padrões</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="section-head">
+        <div class="section-label">Repositórios atuais</div>
+        <h2 class="section-title">Exemplos práticos de automação publicada.</h2>
+        <p class="section-body">
+          Os repositórios atuais mostram o tipo de problema que o esforço quer atacar: desperdício evitável, eficiência operacional e automação segura com potencial de reutilização.
+        </p>
+      </div>
+
+      <div class="repo-grid">
+        <article class="card">
+          <span class="eyetag">AWS Cost Cleanup</span>
+          <h3>cleanup_block_storage_idle</h3>
+          <p>Automação para identificar volumes sem uso e apoiar remoção de desperdício com mais segurança operacional.</p>
+          <a href="https://github.com/FinOps-as-Code/cleanup_block_storage_idle" target="_blank" rel="noreferrer">Abrir repositório</a>
+        </article>
+
+        <article class="card">
+          <span class="eyetag">IP Efficiency</span>
+          <h3>cleanup_ip_idle</h3>
+          <p>Automação para recuperar recursos de IP com custo evitável e reduzir o acúmulo de recursos ociosos.</p>
+          <a href="https://github.com/FinOps-as-Code/cleanup_ip_idle" target="_blank" rel="noreferrer">Abrir repositório</a>
+        </article>
+
+        <article class="card">
+          <span class="eyetag">Presença pública</span>
+          <h3>linktree-f2-brazil</h3>
+          <p>Projeto de apoio à camada pública e de visibilidade da iniciativa FinOps-as-Code no Brasil.</p>
+          <a href="https://github.com/FinOps-as-Code/linktree-f2-brazil" target="_blank" rel="noreferrer">Abrir repositório</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container reveal">
+      <div class="cta">
+        <div class="section-label" style="justify-content:center;">Comunidade e evolução</div>
+        <h2 class="section-title">Os repositórios atuais são ponto de partida, não limite.</h2>
+        <p class="section-body">
+          Novos projetos podem surgir sempre que um caso de uso relevante merecer sua própria automação.
+          O compromisso permanente deve ser com clareza, utilidade prática, segurança de execução e colaboração aberta.
+        </p>
+
+        <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+          <a class="btn-primary" href="https://finops-as-code.github.io/finops-docs/docs/contributing/pt-br.html" target="_blank" rel="noreferrer">Contribuir com o esforço</a>
+          <a class="btn-secondary" href="https://finops-as-code.github.io/finops-docs/docs/pt-br.html" target="_blank" rel="noreferrer">Ler a documentação</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>FinOps-as-Code — esforço open source para prática, colaboração e automação responsável</span>
+      <div class="footer-links">
+        <a href="https://finops-as-code.github.io/finops-docs/index.html" target="_blank" rel="noreferrer">English</a>
+        <a href="https://github.com/FinOps-as-Code" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://finops-as-code.github.io/finops-docs/docs/pt-br.html" target="_blank" rel="noreferrer">Docs</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach((el) => io.observe(el));
+  </script>
+</body>
 </html>
