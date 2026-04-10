@@ -69,6 +69,7 @@ code {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
   margin-bottom: 1rem;
   padding: 0.65rem 0.85rem;
   border: 1px solid var(--border);
@@ -82,12 +83,14 @@ code {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text);
+  flex: 1 1 180px;
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
+  flex: 999 1 520px;
 }
 
 .nav a {
@@ -146,10 +149,12 @@ code {
 }
 
 .hero h1 {
-  max-width: 12ch;
+  max-width: 13ch;
   margin-bottom: 0.8rem;
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   line-height: 1.08;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .lead {
@@ -157,6 +162,20 @@ code {
   margin: 0;
   font-size: 1rem;
   color: var(--text-soft);
+}
+
+.content,
+.card,
+.hero,
+.hero-panel,
+.narrative-copy,
+.narrative-callout,
+.entry-list,
+.repo-feature,
+.repo-mini,
+.closing-copy,
+.closing-actions {
+  overflow-wrap: anywhere;
 }
 
 .actions {
@@ -437,6 +456,10 @@ code {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav {
+    width: 100%;
   }
 
   .entry-item {
