@@ -9,19 +9,17 @@
     return prefersDark.matches ? "dark" : "light";
   }
 
-  function labels(lang, theme) {
+  function getLabel(lang, theme) {
     const isPt = (lang || "").toLowerCase().startsWith("pt");
-    if (isPt) {
-      return theme === "dark" ? "Modo claro" : "Modo escuro";
-    }
-    return theme === "dark" ? "Light mode" : "Dark mode";
+    if (isPt) return theme === "dark" ? "☀️ Modo claro" : "🌙 Modo escuro";
+    return theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
   }
 
   function applyTheme(theme) {
     root.setAttribute("data-theme", theme);
     const toggle = document.querySelector("[data-theme-toggle]");
     if (toggle) {
-      toggle.textContent = labels(root.lang, theme);
+      toggle.textContent = getLabel(root.lang, theme);
       toggle.setAttribute("aria-pressed", String(theme === "dark"));
     }
   }
@@ -32,8 +30,12 @@
     applyTheme(next);
   }
 
+  // Apply theme immediately (before DOMContentLoaded) to avoid flash
+  applyTheme(getInitialTheme());
+
   document.addEventListener("DOMContentLoaded", function () {
-    applyTheme(getInitialTheme());
+    // Re-apply to ensure toggle button text is updated after DOM is ready
+    applyTheme(root.getAttribute("data-theme") || getInitialTheme());
     const toggle = document.querySelector("[data-theme-toggle]");
     if (toggle) {
       toggle.addEventListener("click", toggleTheme);
